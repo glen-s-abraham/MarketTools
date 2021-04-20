@@ -15,14 +15,18 @@ revenue=[]
 income=[]
 eps=[]
 div=[]
+op_profit=[]
 for i in range(1,len(col)):
 	revenue.append(float(pnl[col[i]][0]))
+	op_profit.append(float(pnl[col[i]][2]))
 	income.append(float(pnl[col[i]][9]))
 	eps.append(float(pnl[col[i]][10]))
 	div.append(pnl[col[i]][11])
 for i in range(0,len(div)-1):
 	div[i]=float(div[i].replace('%',''))
 
+print(op_profit)
+print(revenue)
 
 plot1=plt.figure("P&L data Visualization")	
 plt.subplot(2,3,1)

@@ -16,8 +16,9 @@ analytics=pd.read_html(f'https://finance.yahoo.com/quote/{company}/analysis')
 current=float(historical[0]['Adj Close**'][0])
 eps=float(summary[1][1][3])
 growth=float(analytics[5][company][4].replace('%',''))
-bond=float(input("Enter Yield on a AAA bond:"))
-value=(eps*(8.5+(2*growth))*8.5)/bond
+bond=7.8
+#grahams formula adjusted as per indian markets
+value=(eps*(7+growth)*8.5)/bond
 
 print("\n","Current :",current)
 print("\n",summary[1][0][3],": ",eps)
